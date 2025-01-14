@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+
 @Service
 public class OrderService {
 
@@ -17,6 +19,7 @@ public class OrderService {
     }
 
     public Order save(Order order) {
+        order.setCreatedAt(LocalDate.now());
         return orderRepository.save(order);
     }
 
