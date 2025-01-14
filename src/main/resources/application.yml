@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: order-service
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/ordersDb
+    username: myUser
+    password: myUser
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        database: postgresql
+        database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+application:
+  security:
+    jwt:
+      secret-key: B4hiXd88PTrSDt4FD9MJhgVT9LZcqMHYsSCRLl/JOAJsMyh8jRcSPl8akwNSSbuL
+      expiration: 86400000
+      cookie-name: orderService
